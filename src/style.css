@@ -637,3 +637,20 @@ body.cursor-active .cursor-orb { opacity: 1; }
 .entertainment-end { margin-top:40px; }
 @media(max-width:900px) { .entertainment-intro { grid-template-columns:1fr; gap:28px; } .entertainment-services { grid-template-columns:1fr; gap:28px; } }
 @media(max-width:600px) { .entertainment-projects,.entertainment-originals { grid-template-columns:1fr; } .entertainment-originals article:has(img) { grid-template-columns:.6fr 1fr; gap:20px; } .entertainment { padding-top:40px; } }
+
+/* Contact form */
+.contact-form { margin:48px 0 64px; padding:32px 0; border-top:1px solid currentColor; border-bottom:1px solid currentColor; }
+.contact-form h3 { font-size:clamp(26px,3vw,42px); margin-bottom:28px; letter-spacing:-.03em; }
+.contact-fields { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; }
+.contact-form label { display:block; font-family:var(--font-mono); font-size:12px; text-transform:uppercase; margin-bottom:10px; }
+.contact-form label span { font-size:10px; }
+.contact-form input,.contact-form textarea { width:100%; min-width:0; border:1px solid var(--ink); border-radius:0; background:rgba(230,228,223,.9); color:var(--ink); padding:14px; font:16px var(--font-grotesk); }
+.contact-form textarea { resize:vertical; min-height:150px; }
+.contact-form textarea::placeholder { color:#454545; opacity:1; }
+.contact-form-actions { display:flex; gap:28px; align-items:center; margin-top:24px; }
+.contact-form button { min-height:48px; padding:16px 26px; background:var(--ink); color:var(--paper); border:1px solid var(--ink); font:14px var(--font-mono); cursor:pointer; text-transform:uppercase; flex-shrink:0; }
+.contact-form button:hover { background:var(--paper); color:var(--ink); }
+.contact-form-actions p { max-width:560px; line-height:1.6; }
+#contact-form-status:not(:empty) { margin-top:20px; line-height:1.6; }
+.contact-form :focus-visible { outline:2px solid var(--ink); outline-offset:4px; }
+@media(max-width:600px) { .contact-fields { grid-template-columns:1fr; gap:20px; } .contact-form-actions { align-items:flex-start; flex-direction:column; gap:16px; } .contact-form button { width:100%; } }

@@ -449,3 +449,23 @@ document.addEventListener("DOMContentLoaded", () => {
   anchors();
   window.addEventListener("load", () => ScrollTrigger.refresh());
 });
+
+/* Contact inquiries use the visitor's email app; no submission service. */
+const contactForm = document.querySelector<HTMLFormElement>("#contact-form");
+contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!contactForm.reportValidity()) return;
+  const data = new FormData(contactForm);
+  const value = (key: string) => String(data.get(key) ?? "").trim();
+  const name = value("name");
+  const company = value("company");
+  const subject = `Elevate Innovation inquiry — ${company || name}`.replace(/[\r\n]/g, " ");
+  const body = [
+    "Hello TK,", "", value("message"), "",
+    "Contact details", `Name: ${name}`, `Email: ${value("email")}`,
+    `Company: ${company || "Not provided"}`, `Phone: ${value("phone") || "Not provided"}`,
+  ].join("\r\n");
+  window.location.href = `mailto:tk@elevate.cc?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const status = document.querySelector<HTMLElement>("#contact-form-status");
+  if (status) status.textContent = "Your email app should open with your draft. If it doesn't, email tk@elevate.cc directly. Your message stays here until you leave this page.";
+});
