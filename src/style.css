@@ -354,13 +354,8 @@ body.cursor-active .cursor-orb { opacity: 1; }
   opacity: 0;
   padding: 0 calc(var(--gutter) + 14px);
 }
-.process-step .num {
-  font-size: clamp(90px, 16vw, 260px);
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(230, 228, 223, 0.5);
-}
-.process-step h3 { font-size: clamp(34px, 5vw, 74px); margin: 10px 0 18px; }
-.process-step p { max-width: 420px; opacity: 0.75; }
+.process-step h3 { font-size: clamp(40px, 5.6vw, 84px); margin: 0 0 24px; }
+.process-step p { max-width: 520px; font-size: clamp(14px, 1.25vw, 18px); line-height: 1.7; opacity: 0.85; }
 .process-step .medium {
   position: relative;
   aspect-ratio: 4 / 3;
